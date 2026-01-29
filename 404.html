@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 | Page Not Found</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  color:#fff;
+  overflow:hidden;
+}
+
+/* BACKGROUND SHAPES */
+.bg-shape{
+  position:absolute;
+  width:300px;
+  height:300px;
+  background:rgba(0,255,213,0.15);
+  border-radius:50%;
+  filter:blur(80px);
+  animation:float 8s infinite alternate;
+}
+
+.bg-shape.one{top:10%;left:10%}
+.bg-shape.two{bottom:10%;right:10%;animation-delay:2s}
+
+@keyframes float{
+  from{transform:translateY(0)}
+  to{transform:translateY(-40px)}
+}
+
+/* CONTENT */
+.error-box{
+  text-align:center;
+  max-width:600px;
+  padding:40px 20px;
+  position:relative;
+  z-index:2;
+  animation:fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(30px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+.error-box h1{
+  font-size:140px;
+  line-height:1;
+  color:#00ffd5;
+  margin-bottom:10px;
+}
+
+.error-box h2{
+  font-size:32px;
+  margin-bottom:12px;
+}
+
+.error-box p{
+  font-size:16px;
+  color:#d1d5db;
+  line-height:1.7;
+  margin-bottom:40px;
+}
+
+/* BUTTONS */
+.actions{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.actions a{
+  text-decoration:none;
+  padding:14px 40px;
+  border-radius:30px;
+  font-weight:600;
+  transition:.3s;
+}
+
+.actions .primary{
+  background:#00ffd5;
+  color:#111;
+}
+
+.actions .primary:hover{
+  transform:translateY(-4px);
+}
+
+.actions .secondary{
+  border:2px solid #00ffd5;
+  color:#00ffd5;
+}
+
+.actions .secondary:hover{
+  background:#00ffd5;
+  color:#111;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+  .error-box h1{font-size:100px}
+  .error-box h2{font-size:24px}
+}
+</style>
+</head>
+
+<body>
+
+<!-- BACKGROUND -->
+<div class="bg-shape one"></div>
+<div class="bg-shape two"></div>
+
+<!-- CONTENT -->
+<div class="error-box">
+  <h1>404</h1>
+  <h2>Page Not Found</h2>
+  <p>
+    The page you’re looking for doesn’t exist or has been moved.
+    Let’s get you back to growing your digital presence.
+  </p>
+
+  <div class="actions">
+    <a href="index.html" class="primary">Go Home</a>
+    
+  </div>
+</div>
+
+</body>
+</html>

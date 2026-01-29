@@ -1,0 +1,1978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Navbar</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#ffffff;
+  color:#111;
+  padding-top:72px; /* FIX OVERLAP */
+}
+
+/* ===== NAVBAR ===== */
+.navbar{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:72px;
+  background:linear-gradient(90deg,white,#203a43,#2c5364);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 22px;
+  z-index:10001;
+}
+
+/* ===== LOGO ===== */
+.nav-logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+  color:#fff;
+}
+
+.nav-logo img{
+  height:36px;
+  width:auto;
+}
+
+.nav-logo span{
+  font-size:22px;
+  font-weight:600;
+}
+
+.nav-logo span b{
+  color:#00ffd5;
+}
+
+/* ===== DESKTOP MENU ===== */
+.nav-menu{
+  display:flex;
+  gap:32px;
+}
+
+.nav-menu a{
+  color:#fff;
+  text-decoration:none;
+  font-size:14px;
+  position:relative;
+}
+
+.nav-menu a::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0;
+  height:2px;
+  background:#00ffd5;
+  transition:.3s;
+}
+
+.nav-menu a:hover::after{
+  width:100%;
+}
+
+/* ===== HAMBURGER ===== */
+.hamburger{
+  display:none;
+  flex-direction:column;
+  gap:6px;
+  cursor:pointer;
+}
+
+.hamburger span{
+  width:26px;
+  height:3px;
+  background:#fff;
+  transition:.4s;
+}
+
+/* ===== MOBILE MENU ===== */
+.mobile-menu{
+  position:fixed;
+  inset:0;
+  background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:30px;
+  transform:translateY(-100%);
+  transition:0.6s ease;
+  z-index:10000;
+}
+
+.mobile-menu.active{
+  transform:translateY(0);
+}
+
+.mobile-menu a{
+  color:#fff;
+  font-size:26px;
+  text-decoration:none;
+  font-weight:500;
+}
+
+.mobile-menu a:hover{
+  color:#00ffd5;
+}
+
+/* ===== HAMBURGER ANIMATION ===== */
+.hamburger.active span:nth-child(1){
+  transform:rotate(45deg) translate(6px,6px);
+}
+.hamburger.active span:nth-child(2){
+  opacity:0;
+}
+.hamburger.active span:nth-child(3){
+  transform:rotate(-45deg) translate(6px,-6px);
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:900px){
+  .nav-menu{display:none;}
+  .hamburger{display:flex;}
+  .nav-logo span{font-size:18px;}
+  .nav-logo img{height:32px;}
+}
+
+/* lock scroll */
+body.menu-open{
+  overflow:hidden;
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar">
+  <a href="index.html" class="nav-logo">
+    <!-- CHANGE LOGO IMAGE HERE -->
+    <img src="Screenshot (7) (1) (1).webp" alt="Logo">
+   
+  </a>
+
+  <div class="nav-menu">
+    <a href="404.html">Home</a>
+    <a href="404.html">About</a>
+    <a href="404.html">Services</a>
+    <a href="404.html">Case Studies</a>
+    <a href="404.html">Contact</a>
+  </div>
+
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</nav>
+
+<!-- ===== MOBILE MENU ===== -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="404.html" onclick="closeMenu()">Home</a>
+  <a href="404.html" onclick="closeMenu()">About</a>
+  <a href="404.html" onclick="closeMenu()">Services</a>
+  <a href="404.html" onclick="closeMenu()">Case Studies</a>
+  <a href="404.html" onclick="closeMenu()">Testimonials</a>
+  <a href="404.html" onclick="closeMenu()">Contact</a>
+</div>
+
+<script>
+const hamburger = document.getElementById("hamburger");
+const mobileMenu = document.getElementById("mobileMenu");
+
+hamburger.addEventListener("click",()=>{
+  hamburger.classList.toggle("active");
+  mobileMenu.classList.toggle("active");
+  document.body.classList.toggle("menu-open");
+});
+
+function closeMenu(){
+  hamburger.classList.remove("active");
+  mobileMenu.classList.remove("active");
+  document.body.classList.remove("menu-open");
+}
+</script>
+
+</body>
+</html>
+
+</body>
+</html>
+
+
+</head>
+<body>
+  
+</body>
+</html>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#050816;
+  color:#fff;
+  overflow-x:hidden;
+}
+
+/* ================= HERO ================= */
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:90px 6%;
+  background:linear-gradient(135deg,#6a00ff,#00e5ff,#ff3cac);
+  background-size:300% 300%;
+  animation:bgShift 10s ease infinite;
+}
+
+@keyframes bgShift{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+/* ================= GRID ================= */
+.hero-wrapper{
+  width:100%;
+  max-width:1200px;
+  display:grid;
+  grid-template-columns:1.1fr 0.9fr;
+  align-items:center;
+  gap:60px;
+}
+
+/* ================= TEXT ================= */
+.hero-text h1{
+  font-size:60px;
+  line-height:1.15;
+  margin-bottom:20px;
+}
+
+.hero-text h1 span{
+  background:linear-gradient(90deg,#00ffd5,#ffffff);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.hero-text p{
+  font-size:18px;
+  max-width:520px;
+  color:#e5e7eb;
+  margin-bottom:35px;
+}
+
+/* ================= BUTTONS ================= */
+.hero-btns{
+  display:flex;
+  gap:18px;
+}
+
+.hero-btns a{
+  padding:15px 36px;
+  border-radius:50px;
+  font-weight:600;
+  text-decoration:none;
+  transition:0.35s;
+}
+
+.btn-dark{
+  background:#000;
+  color:#fff;
+}
+
+.btn-dark:hover{
+  transform:translateY(-4px);
+  background:#111;
+}
+
+.btn-border{
+  border:2px solid #fff;
+  color:#fff;
+}
+
+.btn-border:hover{
+  background:#fff;
+  color:#000;
+}
+
+/* ================= IMAGE ================= */
+.hero-visual{
+  position:relative;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.hero-visual img{
+  width:100%;
+  max-width:420px;
+  border-radius:20px;
+  animation:float 5s ease-in-out infinite;
+  box-shadow:0 35px 80px rgba(0,0,0,0.45);
+}
+
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-18px)}
+}
+
+/* rings */
+.circle{
+  position:absolute;
+  width:500px;
+  height:500px;
+  border-radius:50%;
+  border:2px dashed rgba(255,255,255,0.4);
+  animation:spin 18s linear infinite;
+}
+
+.circle.small{
+  width:400px;
+  height:400px;
+  animation-direction:reverse;
+}
+
+@keyframes spin{
+  from{transform:rotate(0deg)}
+  to{transform:rotate(360deg)}
+}
+
+/* ================= STATS ================= */
+.stats{
+  margin-top:50px;
+  display:flex;
+  gap:40px;
+  background:rgba(0,0,0,0.45);
+  padding:20px 40px;
+  border-radius:50px;
+  backdrop-filter:blur(14px);
+}
+
+.stat h3{
+  font-size:26px;
+  color:#00ffd5;
+}
+
+.stat p{
+  font-size:13px;
+  color:#e5e7eb;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Tablet */
+@media(max-width:1024px){
+  .hero-wrapper{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+
+  .hero-text p{
+    margin:auto auto 35px;
+  }
+
+  .hero-btns{
+    justify-content:center;
+  }
+
+  .stats{
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+}
+
+/* Mobile */
+@media(max-width:600px){
+  .hero{
+    padding:70px 20px;
+  }
+
+  .hero-text h1{
+    font-size:38px;
+  }
+
+  .hero-text p{
+    font-size:16px;
+  }
+
+  .hero-btns{
+    flex-direction:column;
+    width:100%;
+  }
+
+  .hero-btns a{
+    width:100%;
+    text-align:center;
+  }
+
+  .circle{
+    width:320px;
+    height:320px;
+  }
+
+  .circle.small{
+    width:260px;
+    height:260px;
+  }
+
+  .stats{
+    gap:20px;
+    padding:18px 24px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+  <div class="hero-wrapper">
+
+    <!-- TEXT -->
+    <div class="hero-text">
+      <h1>
+        Grow Your Business  
+        <span>With Digital Marketing</span>
+      </h1>
+      <p>
+        We help brands increase traffic, generate quality leads,
+        and maximize ROI through powerful digital strategies.
+      </p>
+
+      <div class="hero-btns">
+        <a href="#" class="btn-dark">Get Started</a>
+        <a href="#" class="btn-border">View Services</a>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <h3>500+</h3>
+          <p>Clients</p>
+        </div>
+        <div class="stat">
+          <h3>10x</h3>
+          <p>Growth</p>
+        </div>
+        <div class="stat">
+          <h3>99%</h3>
+          <p>Satisfaction</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- IMAGE -->
+    <div class="hero-visual">
+      <div class="circle"></div>
+      <div class="circle small"></div>
+      <img src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7" alt="Digital Marketing">
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services Section</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#f4f4f4;
+}
+
+/* ===== SECTION TITLE ===== */
+.section-title{
+  max-width:1200px;
+  margin:80px auto 40px;
+  padding:0 20px;
+}
+
+.section-title h1{
+  font-size:42px;
+  color:#111;
+  margin-bottom:10px;
+}
+
+.section-title p{
+  font-size:16px;
+  color:#555;
+  max-width:520px;
+}
+
+/* ===== SERVICES WRAPPER ===== */
+.services-wrapper{
+  max-width:1200px;
+  margin:0 auto 80px;
+  padding:0 20px;
+  display:flex;
+  flex-direction:column;
+  gap:40px;
+}
+
+/* ===== SERVICE CARD ===== */
+.service-card{
+  position:relative;
+  background:#0b6fa4;
+  min-height:420px;
+  padding:60px 50px;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+}
+
+/* alternate colors */
+.service-card:nth-child(1){ background:#0b6fa4; }
+.service-card:nth-child(2){ background:#a56b00; }
+.service-card:nth-child(3){ background:#004c6d; }
+.service-card:nth-child(4){ background:#6a1b9a; }
+.service-card:nth-child(5){ background:#00695c; }
+
+/* ===== TEXT ===== */
+.service-content{
+  max-width:520px;
+  color:#fff;
+  z-index:2;
+}
+
+.service-content h2{
+  font-size:42px;
+  margin-bottom:10px;
+}
+
+.service-content p{
+  font-size:18px;
+  opacity:0.9;
+}
+
+/* button */
+.service-content a{
+  display:inline-block;
+  margin-top:40px;
+  padding:14px 42px;
+  border:2px solid #fff;
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  letter-spacing:1px;
+  transition:.3s;
+}
+
+.service-content a:hover{
+  background:#fff;
+  color:#000;
+}
+
+/* ===== IMAGE ===== */
+.service-image{
+  position:absolute;
+  right:40px;
+  bottom:40px;
+  width:360px;
+  z-index:1;
+}
+
+.service-image img{
+  width:100%;
+  display:block;
+}
+
+/* vertical accent bar */
+.service-card::after{
+  content:'';
+  position:absolute;
+  right:160px;
+  top:60px;
+  width:120px;
+  height:300px;
+  background:rgba(255,255,255,0.35);
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:900px){
+  .section-title h1{
+    font-size:34px;
+  }
+
+  .service-card{
+    flex-direction:column;
+    padding:50px 25px;
+    min-height:auto;
+  }
+
+  .service-content h2{
+    font-size:32px;
+  }
+
+  .service-image{
+    position:static;
+    width:260px;
+    margin-top:40px;
+  }
+
+  .service-card::after{
+    display:none;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===== TITLE ===== -->
+<section class="section-title">
+  <h1>Services</h1>
+  <p>
+    Our digital services help organizations innovate, scale,
+    and deliver measurable business value.
+  </p>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="services-wrapper">
+
+  <div class="service-card">
+    <div class="service-content">
+      <h2>Digital Operating Model</h2>
+      <p>For the AI-first enterprise.</p>
+      <a href="404.html">EXPLORE</a>
+    </div>
+    <div class="service-image">
+      <img src="https://picsum.photos/600/600?ants" alt="">
+    </div>
+  </div>
+
+  <div class="service-card">
+    <div class="service-content">
+      <h2>Digital Core Capabilities</h2>
+      <p>Build vital capabilities to deliver outcomes.</p>
+      <a href="404.html">EXPLORE</a>
+    </div>
+    <div class="service-image">
+      <img src="https://picsum.photos/600/600?butterfly" alt="">
+    </div>
+  </div>
+
+  <div class="service-card">
+    <div class="service-content">
+      <h2>Experience Transformation</h2>
+      <p>Create human-centric digital journeys.</p>
+      <a href="404.html">EXPLORE</a>
+    </div>
+    <div class="service-image">
+      <img src="https://picsum.photos/600/600?flower" alt="">
+    </div>
+  </div>
+
+  <div class="service-card">
+    <div class="service-content">
+      <h2>Marketing Analytics</h2>
+      <p>Turn insights into measurable growth.</p>
+      <a href="404.html">EXPLORE</a>
+    </div>
+    <div class="service-image">
+      <img src="https://picsum.photos/600/600?data" alt="">
+    </div>
+  </div>
+
+  <div class="service-card">
+    <div class="service-content">
+      <h2>Growth Acceleration</h2>
+      <p>Scale faster with digital innovation.</p>
+      <a href="404.html">EXPLORE</a>
+    </div>
+    <div class="service-image">
+      <img src="https://picsum.photos/600/600?growth" alt="">
+    </div>
+  </div>
+
+</section>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Details Section</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#ffffff;
+  color:#111;
+}
+
+/* ===== SECTION WRAPPER ===== */
+.product-section{
+  max-width:1200px;
+  margin:80px auto;
+  padding:0 20px;
+}
+
+/* ===== TITLE ===== */
+.product-title{
+  text-align:center;
+  margin-bottom:50px;
+}
+
+.product-title span{
+  display:block;
+  font-size:12px;
+  letter-spacing:3px;
+  color:#999;
+  margin-bottom:10px;
+}
+
+.product-title h2{
+  font-size:42px;
+  margin-bottom:12px;
+}
+
+.product-title p{
+  font-size:16px;
+  color:#666;
+  max-width:520px;
+  margin:auto;
+}
+
+/* ===== GRID ===== */
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:24px;
+}
+
+/* ===== CARD ===== */
+.product-card{
+  position:relative;
+  height:260px;
+  overflow:hidden;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+.product-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:transform 0.6s ease;
+}
+
+.product-card:hover img{
+  transform:scale(1.08);
+}
+
+/* overlay */
+.product-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to top,
+    rgba(0,0,0,0.75),
+    rgba(0,0,0,0.25)
+  );
+  display:flex;
+  align-items:flex-end;
+  padding:24px;
+}
+
+.product-overlay h3{
+  font-size:20px;
+  color:#fff;
+  margin-bottom:6px;
+}
+
+.product-overlay p{
+  font-size:14px;
+  color:#e5e5e5;
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:768px){
+  .product-title h2{
+    font-size:32px;
+  }
+
+  .product-grid{
+    grid-template-columns:1fr;
+  }
+
+  .product-card{
+    height:240px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<section class="product-section">
+
+  <!-- TITLE -->
+  <div class="product-title">
+    <span>THE NEXT</span>
+    <h2>Digital Marketing</h2>
+    <p>
+      We bring you powerful advantages to navigate
+      your digital marketing transformation.
+    </p>
+  </div>
+
+  <!-- GRID -->
+  <div class="product-grid">
+
+    <div class="product-card">
+      <img src="https://picsum.photos/600/400?marketing" alt="">
+      <div class="product-overlay">
+        <div>
+          <h3>Experience</h3>
+          <p>Design-led transformation. From brand to experience.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="https://picsum.photos/600/400?analytics" alt="">
+      <div class="product-overlay">
+        <div>
+          <h3>Insight</h3>
+          <p>Data-driven decisions for smarter marketing.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="https://picsum.photos/600/400?technology" alt="">
+      <div class="product-overlay">
+        <div>
+          <h3>Innovate</h3>
+          <p>Bridge digital platforms with innovation.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="https://picsum.photos/600/400?growth" alt="">
+      <div class="product-overlay">
+        <div>
+          <h3>Accelerate</h3>
+          <p>Scale growth with performance-driven strategies.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="https://picsum.photos/600/400?security" alt="">
+      <div class="product-overlay">
+        <div>
+          <h3>Assure</h3>
+          <p>Trust, transparency, and digital assurance.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Component</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#ffffff;
+  color:#111;
+}
+
+/* ===== ABOUT SECTION ===== */
+.about-section{
+  max-width:1200px;
+  margin:80px auto;
+  padding:0 20px;
+}
+
+/* ===== TITLE ===== */
+.about-title{
+  text-align:center;
+  margin-bottom:60px;
+}
+
+.about-title span{
+  display:block;
+  font-size:12px;
+  letter-spacing:3px;
+  color:#999;
+  margin-bottom:10px;
+}
+
+.about-title h2{
+  font-size:42px;
+  margin-bottom:14px;
+}
+
+.about-title p{
+  font-size:16px;
+  color:#666;
+  max-width:620px;
+  margin:auto;
+}
+
+/* ===== ABOUT GRID ===== */
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+}
+
+/* ===== TEXT BLOCK ===== */
+.about-text{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.about-text h3{
+  font-size:26px;
+  margin-bottom:14px;
+}
+
+.about-text p{
+  font-size:15px;
+  line-height:1.7;
+  color:#555;
+  margin-bottom:16px;
+}
+
+/* ===== IMAGE BLOCK ===== */
+.about-image{
+  position:relative;
+  height:360px;
+  overflow:hidden;
+  border-radius:6px;
+}
+
+.about-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+/* subtle overlay */
+.about-image::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to top,
+    rgba(0,0,0,0.25),
+    rgba(0,0,0,0.05)
+  );
+}
+
+/* ===== VALUE STRIP ===== */
+.about-values{
+  margin-top:60px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:30px;
+}
+
+.value-card{
+  border-top:2px solid #111;
+  padding-top:18px;
+}
+
+.value-card h4{
+  font-size:18px;
+  margin-bottom:8px;
+}
+
+.value-card p{
+  font-size:14px;
+  color:#666;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  .about-title h2{
+    font-size:32px;
+  }
+
+  .about-grid{
+    grid-template-columns:1fr;
+  }
+
+  .about-image{
+    height:260px;
+  }
+
+  .about-values{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<section class="about-section">
+
+  <!-- TITLE -->
+  <div class="about-title">
+    <span>ABOUT US</span>
+    <h2>The next generation of digital growth</h2>
+    <p>
+      We help brands navigate digital change with clarity,
+      creativity, and measurable outcomes.
+    </p>
+  </div>
+
+  <!-- GRID -->
+  <div class="about-grid">
+
+    <!-- TEXT -->
+    <div class="about-text">
+      <h3>Who we are</h3>
+      <p>
+        We are a digital marketing and transformation company focused
+        on building meaningful connections between brands and people.
+      </p>
+      <p>
+        Our approach blends strategy, creativity, and technology to
+        deliver sustainable business growth in a fast-changing world.
+      </p>
+    </div>
+
+    <!-- IMAGE -->
+    <div class="about-image">
+      <img src="https://picsum.photos/800/600?team" alt="About us">
+    </div>
+
+  </div>
+
+  <!-- VALUES -->
+  <div class="about-values">
+    <div class="value-card">
+      <h4>Strategy-led</h4>
+      <p>Every solution starts with insight and purpose.</p>
+    </div>
+    <div class="value-card">
+      <h4>Human-centric</h4>
+      <p>Designing experiences that truly connect.</p>
+    </div>
+    <div class="value-card">
+      <h4>Outcome-driven</h4>
+      <p>Focused on results that matter to your business.</p>
+    </div>
+  </div>
+
+</section>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Testimonials</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#ffffff;
+  color:#111;
+}
+
+/* ===== TESTIMONIAL SECTION ===== */
+.testimonial-section{
+  max-width:1200px;
+  margin:80px auto;
+  padding:0 20px;
+}
+
+/* ===== TITLE ===== */
+.testimonial-title{
+  text-align:center;
+  margin-bottom:60px;
+}
+
+.testimonial-title span{
+  display:block;
+  font-size:12px;
+  letter-spacing:3px;
+  color:#999;
+  margin-bottom:10px;
+}
+
+.testimonial-title h2{
+  font-size:42px;
+  margin-bottom:12px;
+}
+
+.testimonial-title p{
+  font-size:16px;
+  color:#666;
+  max-width:600px;
+  margin:auto;
+}
+
+/* ===== SLIDER ===== */
+.testimonial-slider{
+  position:relative;
+  overflow:hidden;
+}
+
+.testimonial-track{
+  display:flex;
+  transition:transform 0.8s ease;
+}
+
+/* ===== CARD ===== */
+.testimonial-card{
+  min-width:50%;
+  padding:30px;
+  animation:fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(30px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+.card-inner{
+  background:#f7f7f7;
+  padding:40px;
+  border-radius:10px;
+  height:100%;
+  transition:0.4s;
+}
+
+.card-inner:hover{
+  transform:translateY(-10px);
+  background:#f0f0f0;
+}
+
+/* ===== CLIENT ===== */
+.client{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  margin-bottom:20px;
+}
+
+.client img{
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+.client h4{
+  font-size:16px;
+}
+
+.client span{
+  font-size:13px;
+  color:#777;
+}
+
+/* ===== TEXT ===== */
+.card-inner p{
+  font-size:15px;
+  line-height:1.7;
+  color:#555;
+}
+
+/* ===== CONTROLS ===== */
+.controls{
+  margin-top:40px;
+  display:flex;
+  justify-content:center;
+  gap:14px;
+}
+
+.dot{
+  width:12px;
+  height:12px;
+  border-radius:50%;
+  border:2px solid #111;
+  cursor:pointer;
+  opacity:0.4;
+}
+
+.dot.active{
+  background:#111;
+  opacity:1;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  .testimonial-card{
+    min-width:100%;
+  }
+
+  .testimonial-title h2{
+    font-size:32px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<section class="testimonial-section">
+
+  <!-- TITLE -->
+  <div class="testimonial-title">
+    <span>TESTIMONIALS</span>
+    <h2>What our clients say</h2>
+    <p>
+      Trusted by businesses worldwide to deliver measurable
+      digital marketing outcomes.
+    </p>
+  </div>
+
+  <!-- SLIDER -->
+  <div class="testimonial-slider">
+    <div class="testimonial-track" id="track">
+
+      <!-- CARD 1 -->
+      <div class="testimonial-card">
+        <div class="card-inner">
+          <div class="client">
+            <img src="https://picsum.photos/100/100?1">
+            <div>
+              <h4>Rahul Sharma</h4>
+              <span>Founder, StartupX</span>
+            </div>
+          </div>
+          <p>
+            The team completely transformed our digital presence.
+            Traffic, leads, and conversions improved significantly
+            within months.
+          </p>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="testimonial-card">
+        <div class="card-inner">
+          <div class="client">
+            <img src="https://picsum.photos/100/100?2">
+            <div>
+              <h4>Ananya Patel</h4>
+              <span>Marketing Head, BrandCo</span>
+            </div>
+          </div>
+          <p>
+            Their data-driven approach and creative execution helped
+            us scale campaigns efficiently and confidently.
+          </p>
+        </div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="testimonial-card">
+        <div class="card-inner">
+          <div class="client">
+            <img src="https://picsum.photos/100/100?3">
+            <div>
+              <h4>Michael Lee</h4>
+              <span>CEO, GrowthLabs</span>
+            </div>
+          </div>
+          <p>
+            Clear strategy, transparent reporting, and real results.
+            A reliable digital marketing partner.
+          </p>
+        </div>
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="testimonial-card">
+        <div class="card-inner">
+          <div class="client">
+            <img src="https://picsum.photos/100/100?4">
+            <div>
+              <h4>Sneha Reddy</h4>
+              <span>Product Manager, TechFlow</span>
+            </div>
+          </div>
+          <p>
+            Their expertise across SEO, paid ads, and analytics made
+            a measurable impact on our growth.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- DOTS -->
+  <div class="controls">
+    <div class="dot active" onclick="goSlide(0)"></div>
+    <div class="dot" onclick="goSlide(1)"></div>
+  </div>
+
+</section>
+
+<script>
+let index = 0;
+const track = document.getElementById("track");
+const dots = document.querySelectorAll(".dot");
+
+function goSlide(i){
+  index = i;
+  track.style.transform = `translateX(-${i * 100}%)`;
+  dots.forEach(d => d.classList.remove("active"));
+  dots[i].classList.add("active");
+}
+
+/* Auto slide */
+setInterval(()=>{
+  index = (index + 1) % dots.length;
+  goSlide(index);
+},5000);
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#ffffff;
+  color:#111;
+}
+
+/* ===== FAQ SECTION ===== */
+.faq-section{
+  max-width:1200px;
+  margin:80px auto;
+  padding:0 20px;
+}
+
+/* ===== TITLE ===== */
+.faq-title{
+  text-align:center;
+  margin-bottom:60px;
+}
+
+.faq-title span{
+  display:block;
+  font-size:12px;
+  letter-spacing:3px;
+  color:#999;
+  margin-bottom:10px;
+}
+
+.faq-title h2{
+  font-size:42px;
+  margin-bottom:12px;
+}
+
+.faq-title p{
+  font-size:16px;
+  color:#666;
+  max-width:600px;
+  margin:auto;
+}
+
+/* ===== FAQ ITEM ===== */
+.faq-item{
+  border-bottom:1px solid #e5e5e5;
+  padding:22px 0;
+}
+
+.faq-question{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  cursor:pointer;
+}
+
+.faq-question h3{
+  font-size:18px;
+  font-weight:500;
+}
+
+.faq-icon{
+  width:22px;
+  height:22px;
+  position:relative;
+}
+
+.faq-icon::before,
+.faq-icon::after{
+  content:'';
+  position:absolute;
+  background:#111;
+  transition:0.3s;
+}
+
+.faq-icon::before{
+  width:100%;
+  height:2px;
+  top:50%;
+  left:0;
+  transform:translateY(-50%);
+}
+
+.faq-icon::after{
+  width:2px;
+  height:100%;
+  left:50%;
+  top:0;
+  transform:translateX(-50%);
+}
+
+/* active state */
+.faq-item.active .faq-icon::after{
+  opacity:0;
+}
+
+/* ===== ANSWER ===== */
+.faq-answer{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height 0.4s ease;
+}
+
+.faq-answer p{
+  margin-top:14px;
+  font-size:15px;
+  line-height:1.7;
+  color:#555;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+  .faq-title h2{
+    font-size:32px;
+  }
+
+  .faq-question h3{
+    font-size:16px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<section class="faq-section">
+
+  <!-- TITLE -->
+  <div class="faq-title">
+    <span>FAQ</span>
+    <h2>Frequently Asked Questions</h2>
+    <p>
+      Everything you need to know about our digital
+      marketing services.
+    </p>
+  </div>
+
+  <!-- FAQ LIST -->
+  <div class="faq-list">
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <h3>What digital marketing services do you offer?</h3>
+        <div class="faq-icon"></div>
+      </div>
+      <div class="faq-answer">
+        <p>
+          We offer SEO, social media marketing, paid advertising,
+          content marketing, analytics, and conversion optimization.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <h3>How long does it take to see results?</h3>
+        <div class="faq-icon"></div>
+      </div>
+      <div class="faq-answer">
+        <p>
+          Results depend on the strategy, but most clients start seeing
+          measurable improvements within 2–3 months.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <h3>Do you provide customized marketing strategies?</h3>
+        <div class="faq-icon"></div>
+      </div>
+      <div class="faq-answer">
+        <p>
+          Yes. Every strategy is tailored based on business goals,
+          industry, and target audience.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <h3>Will I get performance reports?</h3>
+        <div class="faq-icon"></div>
+      </div>
+      <div class="faq-answer">
+        <p>
+          Absolutely. We provide transparent performance reports
+          and regular insights to track growth.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <h3>How do we get started?</h3>
+        <div class="faq-icon"></div>
+      </div>
+      <div class="faq-answer">
+        <p>
+          Simply contact us through our website or book a consultation,
+          and our team will guide you through the next steps.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<script>
+document.querySelectorAll('.faq-item').forEach(item => {
+  item.querySelector('.faq-question').addEventListener('click', () => {
+
+    // close others
+    document.querySelectorAll('.faq-item').forEach(i => {
+      if(i !== item){
+        i.classList.remove('active');
+        i.querySelector('.faq-answer').style.maxHeight = null;
+      }
+    });
+
+    // toggle current
+    item.classList.toggle('active');
+    const answer = item.querySelector('.faq-answer');
+
+    if(item.classList.contains('active')){
+      answer.style.maxHeight = answer.scrollHeight + "px";
+    }else{
+      answer.style.maxHeight = null;
+    }
+  });
+});
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stackly Digital Marketing – Complete</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:#fff;color:#111}
+
+/* COMMON */
+.section{max-width:1200px;margin:90px auto;padding:0 20px}
+.section-title{text-align:center;margin-bottom:60px}
+.section-title span{font-size:12px;letter-spacing:3px;color:#999;display:block;margin-bottom:10px}
+.section-title h2{font-size:42px;margin-bottom:12px}
+.section-title p{color:#666;max-width:600px;margin:auto}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(30px);transition:0.8s}
+.reveal.active{opacity:1;transform:none}
+
+/* GALLERY */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.gallery div{overflow:hidden;border-radius:6px}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:0.6s}
+.gallery div:hover img{transform:scale(1.1)}
+
+/* THEORY */
+.theory{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.theory-card{border-top:2px solid #111;padding-top:20px}
+.theory-card h3{margin-bottom:10px}
+
+/* TEAM */
+.team{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;text-align:center}
+.team img{width:120px;height:120px;border-radius:50%;object-fit:cover;margin-bottom:14px}
+
+/* AWARDS */
+.awards{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;text-align:center}
+.award{border:1px solid #eee;padding:30px;border-radius:6px}
+
+/* TIMELINE */
+.timeline{border-left:2px solid #111;padding-left:30px}
+.time{margin-bottom:30px}
+.time h4{margin-bottom:6px}
+
+/* CASE STUDIES */
+.cases{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.case{background:#f6f6f6;padding:30px;border-radius:6px}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .gallery,.team,.awards,.cases,.theory{grid-template-columns:1fr}
+  .section-title h2{font-size:32px}
+}
+</style>
+</head>
+
+<body>
+
+<!-- GALLERY -->
+<section class="section reveal">
+  <div class="section-title">
+    <span>GALLERY</span>
+    <h2>Life at Stackly</h2>
+    <p>Collaboration, creativity, and digital innovation.</p>
+  </div>
+  <div class="gallery">
+    <div><img src="https://picsum.photos/600/600?office"></div>
+    <div><img src="https://picsum.photos/600/600?team"></div>
+    <div><img src="https://picsum.photos/600/600?meeting"></div>
+    <div><img src="https://picsum.photos/600/600?work"></div>
+  </div>
+</section>
+
+<!-- THEORY -->
+<section class="section reveal">
+  <div class="section-title">
+    <span>OUR APPROACH</span>
+    <h2>Stackly Digital Marketing Theory</h2>
+    <p>Strategy, experience, and data working together.</p>
+  </div>
+  <div class="theory">
+    <div class="theory-card"><h3>Strategy First</h3><p>Business goals guide every campaign.</p></div>
+    <div class="theory-card"><h3>Experience Led</h3><p>Human-centric journeys that convert.</p></div>
+    <div class="theory-card"><h3>Data Driven</h3><p>Continuous optimization & insights.</p></div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="section reveal">
+  <div class="section-title">
+    <span>LEADERSHIP</span>
+    <h2>Meet Our Team</h2>
+  </div>
+  <div class="team">
+    <div><img src="https://picsum.photos/200?1"><h4>CEO</h4><p>Strategy & Vision</p></div>
+    <div><img src="https://picsum.photos/200?2"><h4>CMO</h4><p>Marketing Growth</p></div>
+    <div><img src="https://picsum.photos/200?3"><h4>Head of SEO</h4><p>Organic Growth</p></div>
+    <div><img src="https://picsum.photos/200?4"><h4>Analytics Lead</h4><p>Performance</p></div>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section class="section reveal">
+  <div class="section-title">
+    <span>RECOGNITION</span>
+    <h2>Awards & Certifications</h2>
+  </div>
+  <div class="awards">
+    <div class="award">Google Partner</div>
+    <div class="award">Meta Certified</div>
+    <div class="award">Top Marketing Agency</div>
+    <div class="award">ISO Certified</div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="section reveal">
+  <div class="section-title">
+    <span>JOURNEY</span>
+    <h2>Our Growth Story</h2>
+  </div>
+  <div class="timeline">
+    <div class="time"><h4>2018</h4><p>Company founded</p></div>
+    <div class="time"><h4>2020</h4><p>100+ clients served</p></div>
+    <div class="time"><h4>2023</h4><p>Global expansion</p></div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section class="section reveal">
+  <div class="section-title">
+    <span>CASE STUDIES</span>
+    <h2>Real Business Results</h2>
+  </div>
+  <div class="cases">
+    <div class="case"><h4>Startup Growth</h4><p>5x leads in 6 months.</p></div>
+    <div class="case"><h4>E-commerce SEO</h4><p>300% organic traffic.</p></div>
+    <div class="case"><h4>Paid Ads</h4><p>4x ROI improvement.</p></div>
+  </div>
+</section>
+
+<script>
+document.querySelectorAll('.reveal').forEach(el=>{
+  const obs=new IntersectionObserver(e=>{
+    if(e[0].isIntersecting) el.classList.add('active')
+  },{threshold:.2})
+  obs.observe(el)
+})
+</script>
+
+</body>
+</html>
+<footer class="footer">
+  <div class="footer-inner">
+
+    <!-- BRAND -->
+    <div class="footer-brand">
+      <h3>Stackly Digital</h3>
+      <p>
+        Strategy-led, data-driven digital marketing solutions
+        that help brands grow, scale, and lead.
+      </p>
+    </div>
+
+    <!-- LINKS -->
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="404.html">SEO Optimization</a>
+        <a href="404.html">Social Media Marketing</a>
+        <a href="404.html">Paid Advertising</a>
+        <a href="404.html">Content Marketing</a>
+        <a href="404.html">Analytics & CRO</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="404.html">About Us</a>
+        <a href="404.html">Case Studies</a>
+        <a href="404.html">Testimonials</a>
+        <a href="404.html">FAQ</a>
+        <a href="404.html">Contact</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <span>Email</span>
+        <a href="mailto:info@stacklydigital.com">info@stacklydigital.com</a>
+        <span>Phone</span>
+        <a href="tel:+919000000000">+91 90000 00000</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM -->
+  <div class="footer-bottom">
+    <p>© 2026 Stackly Digital Marketing. All rights reserved.</p>
+    <div class="footer-social">
+      <a href="404.html">LinkedIn</a>
+      <a href="404.html">Instagram</a>
+      <a href="404.html">Twitter</a>
+    </div>
+  </div>
+</footer>
+
+<style>
+/* ===== FOOTER BASE ===== */
+.footer{
+  background:#0f0f0f;
+  color:#fff;
+  margin-top:120px;
+}
+
+.footer-inner{
+  max-width:1200px;
+  margin:auto;
+  padding:80px 20px 60px;
+  display:grid;
+  grid-template-columns:1.3fr 2fr;
+  gap:60px;
+}
+
+/* BRAND */
+.footer-brand h3{
+  font-size:24px;
+  margin-bottom:14px;
+}
+
+.footer-brand p{
+  font-size:15px;
+  line-height:1.7;
+  color:#cfcfcf;
+  max-width:380px;
+}
+
+/* LINKS */
+.footer-links{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:40px;
+}
+
+.footer-col h4{
+  font-size:15px;
+  margin-bottom:18px;
+}
+
+.footer-col a{
+  display:block;
+  text-decoration:none;
+  color:#cfcfcf;
+  font-size:14px;
+  margin-bottom:12px;
+  transition:0.3s;
+}
+
+.footer-col a:hover{
+  color:#fff;
+  transform:translateX(4px);
+}
+
+.footer-col span{
+  display:block;
+  font-size:12px;
+  color:#777;
+  margin:16px 0 6px;
+}
+
+/* BOTTOM */
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,0.1);
+  padding:24px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:14px;
+  max-width:1200px;
+  margin:auto;
+}
+
+.footer-bottom p{
+  font-size:13px;
+  color:#aaa;
+}
+
+.footer-social{
+  display:flex;
+  gap:18px;
+}
+
+.footer-social a{
+  font-size:13px;
+  color:#aaa;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.footer-social a:hover{
+  color:#fff;
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:900px){
+  .footer-inner{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+
+  .footer-brand p{
+    margin:auto;
+  }
+
+  .footer-links{
+    grid-template-columns:1fr;
+    gap:30px;
+  }
+
+  .footer-col a:hover{
+    transform:none;
+  }
+
+  .footer-bottom{
+    flex-direction:column;
+    text-align:center;
+  }
+}
+</style>
